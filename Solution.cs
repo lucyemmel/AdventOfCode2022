@@ -1,7 +1,5 @@
 ﻿namespace AdventOfCode;
 
-using System.IO;
-
 /**
  * <summary>
  * Base class for all Advent of Code solutions. Contains common class members and method declarations.

@@ -8,12 +8,12 @@ using System.IO;
  */
 public class SolutionImpl : Solution
 {
-    private readonly string PartOneInputPath = BasePath + "Day1\\Files\\input1.txt";
-    private readonly string PartTwoInputPath = BasePath + "Day1\\Files\\input2.txt";
+    private readonly string _partOneInputPath = BasePath + "Day1\\Files\\input1.txt";
+    private readonly string _partTwoInputPath = BasePath + "Day1\\Files\\input2.txt";
 
     public override void SolvePartOne()
     {
-        Console.WriteLine(PartOneInputPath);
+        Console.WriteLine(_partOneInputPath);
         long result = GetMaximumElfCalories();
         Console.Out.WriteLine("Solution of problem part 1: " + result);
     }
@@ -35,7 +35,7 @@ public class SolutionImpl : Solution
     {
         long currentMax = 0;
         long currentSum = 0;
-        foreach (string line in File.ReadLines(PartOneInputPath))
+        foreach (string line in File.ReadLines(_partOneInputPath))
         {
             if (line.Length != 0)
             {
@@ -63,7 +63,7 @@ public class SolutionImpl : Solution
         PriorityQueue<long, long> queue = new PriorityQueue<long, long>();
         
         long currentSum = 0;
-        foreach (string line in File.ReadLines(PartTwoInputPath))
+        foreach (string line in File.ReadLines(_partTwoInputPath))
         {
             if (line.Length != 0)
             {
