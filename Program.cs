@@ -1,12 +1,12 @@
-﻿using AdventOfCode.Day1;
+﻿using AdventOfCode.Day2;
 
 namespace AdventOfCode;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static void Main()
     {
-        SolutionImpl solution = new SolutionImpl();
+        Solution solution = new SolutionImpl();
         solution.SolvePartOne();
         solution.SolvePartTwo();
     }
