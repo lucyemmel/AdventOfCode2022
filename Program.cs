@@ -1,4 +1,4 @@
-﻿using AdventOfCode.Day3;
+﻿using AdventOfCode.Day4;
 
 namespace AdventOfCode;
 
@@ -7,7 +7,7 @@ public class Program
     public static void Main()
     {
         Solution solution = new SolutionImpl();
-        //solution.SolvePartOne();
+        solution.SolvePartOne();
         solution.SolvePartTwo();
     }
 }
