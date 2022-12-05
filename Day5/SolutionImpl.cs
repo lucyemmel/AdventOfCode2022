@@ -116,15 +116,16 @@ public class SolutionImpl : Solution
     private void ExecuteInstructionKeepElementOrder(Stack<char> stackToMoveFrom, Stack<char> stackToMoveTo,
         int numberOfElementsToMove)
     {
-        char[] elementsToMove = new char[numberOfElementsToMove];
+        Stack<char> elementsToMove = new Stack<char>();
         for (int i = 0; i < numberOfElementsToMove; i++)
         {
-            elementsToMove[i] = stackToMoveFrom.Pop();
+            elementsToMove.Push(stackToMoveFrom.Pop());
         }
 
-        foreach (char crate in elementsToMove.Reverse())
+        for (int i = 0; i < numberOfElementsToMove; i++)
         {
-            stackToMoveTo.Push(crate);
+            stackToMoveTo.Push(elementsToMove.Pop());
         }
+       
     }
 }
