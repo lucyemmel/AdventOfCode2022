@@ -7,7 +7,7 @@
  */
 public abstract class Solution
 {
-    protected static readonly string BasePath = "C:\\Users\\LucyE\\Documents\\Projects\\Private\\AdventOfCode\\";
+    protected static readonly string BasePath = @"C:\Users\LucyE\Documents\Projects\Private\AdventOfCode\";
     public abstract void SolvePartOne();
     public abstract void SolvePartTwo();
 }

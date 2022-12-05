@@ -8,8 +8,7 @@ namespace AdventOfCode.Day2;
  */
 public class SolutionImpl : Solution
 {
-    private readonly string _partOneInputPath = BasePath + "Day2\\Files\\input1.txt";
-    private readonly string _partTwoInputPath = BasePath + "Day2\\Files\\input2.txt";
+    private readonly string _inputPath = BasePath + @"Day2\input.txt";
 
     private readonly Dictionary<int, int> _scoresPart1 = new()
     {
@@ -42,7 +41,7 @@ public class SolutionImpl : Solution
     public override void SolvePartOne()
     {
         int totalScore = 0;
-        foreach (string line in File.ReadLines(_partOneInputPath))
+        foreach (string line in File.ReadLines(_inputPath))
         {
             totalScore += CalculateScoreForLinePart1(line);
         }
@@ -53,7 +52,7 @@ public class SolutionImpl : Solution
     public override void SolvePartTwo()
     {
         int totalScore = 0;
-        foreach (string line in File.ReadLines(_partTwoInputPath))
+        foreach (string line in File.ReadLines(_inputPath))
         {
             totalScore += CalculateScoreForLinePart2(line);
         }

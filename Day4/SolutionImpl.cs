@@ -2,18 +2,17 @@
 
 public class SolutionImpl : Solution
 {
-    private readonly string _partOneInputPath = BasePath + "Day4\\Files\\input1.txt";
-    private readonly string _partTwoInputPath = BasePath + "Day4\\Files\\input2.txt";
+    private readonly string _inputPath = BasePath + @"Day1\input.txt";
 
     public override void SolvePartOne()
     {
-        int result = File.ReadLines(_partOneInputPath).Sum(line => LineContainsSubRange(line) ? 1 : 0);
+        int result = File.ReadLines(_inputPath).Sum(line => LineContainsSubRange(line) ? 1 : 0);
         Console.Out.WriteLine("Result of day 4 part 1: " + result);
     }
 
     public override void SolvePartTwo()
     {
-        int result = File.ReadLines(_partTwoInputPath).Sum(line => LineContainsOverlappingRanges(line) ? 1 : 0);
+        int result = File.ReadLines(_inputPath).Sum(line => LineContainsOverlappingRanges(line) ? 1 : 0);
         Console.Out.WriteLine("Result of day 4 part 2: " + result);
     }
 

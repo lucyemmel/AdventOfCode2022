@@ -4,13 +4,12 @@ namespace AdventOfCode.Day3;
 
 public class SolutionImpl : Solution
 {
-    private readonly string _partOneInputPath = BasePath + "Day3\\Files\\input1.txt";
-    private readonly string _partTwoInputPath = BasePath + "Day3\\Files\\input2.txt";
+    private readonly string _inputPath = BasePath + @"Day1\input.txt";
 
     public override void SolvePartOne()
     {
         int result = 0;
-        foreach (string line in File.ReadLines(_partOneInputPath))
+        foreach (string line in File.ReadLines(_inputPath))
         {
             result += CalculatePrioritySumPerLine(line);
         }
@@ -20,7 +19,7 @@ public class SolutionImpl : Solution
 
     public override void SolvePartTwo()
     {
-        string[] lines = File.ReadAllLines(_partTwoInputPath);
+        string[] lines = File.ReadAllLines(_inputPath);
         Debug.Assert(lines.Length % 3 == 0);
 
         int result = 0;
