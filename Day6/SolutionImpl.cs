@@ -1,10 +1,9 @@
-﻿using System.Diagnostics;
-
-namespace AdventOfCode.Day6;
+﻿namespace AdventOfCode.Day6;
 
 public class SolutionImpl : Solution
 {
     private readonly string _inputPath = BasePath + @"Day6\input.txt";
+
     public override void SolvePartOne()
     {
         processSequence(File.ReadAllLines(_inputPath)[0]);
@@ -24,11 +23,11 @@ public class SolutionImpl : Solution
         for (int i = 0; i < sequence.Length; i++)
         {
             numberOfProcessedCharacters++;
-            
+
             int setSizeBeforeAdd = currentSequence.Count;
             currentSequence.Add(sequence[i]);
             int setSizeAfterAdd = currentSequence.Count;
-            
+
             if (setSizeAfterAdd == setSizeBeforeAdd)
             {
                 // restart sequence from next starting index
@@ -41,7 +40,8 @@ public class SolutionImpl : Solution
             else if (setSizeAfterAdd == (solvingPartOne ? 4 : 14))
             {
                 // solution found
-                Console.Out.WriteLine($"Solution of day 6 part {(solvingPartOne ? 1 : 2)}: {numberOfProcessedCharacters}");
+                Console.Out.WriteLine(
+                    $"Solution of day 6 part {(solvingPartOne ? 1 : 2)}: {numberOfProcessedCharacters}");
                 return;
             }
         }
