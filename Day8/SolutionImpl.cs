@@ -38,9 +38,10 @@ public class SolutionImpl : Solution
         }
 
         int highestScenicTreeScore = 0;
-        for (int y = 0; y < treeMatrix.Length; y++)
+        // trees on the edges always have score 0 so they are not relevant
+        for (int y = 1; y < treeMatrix.Length - 1; y++)
         {
-            for (int x = 0; x < treeMatrix[0].Length; x++)
+            for (int x = 1; x < treeMatrix[0].Length - 1; x++)
             {
                 int scenicScoreAtCoordinate = CalculateScenicScoreAtCoordinate(x, y, treeMatrix);
                 if (scenicScoreAtCoordinate > highestScenicTreeScore)
@@ -125,10 +126,6 @@ public class SolutionImpl : Solution
 
     private int CalculateScenicScoreAtCoordinate(int x, int y, int[][] treeMatrix)
     {
-        // trees at the edges always have a score of 0
-        if (x == 0 || y == 0)
-            return 0;
-
         int currentValue = treeMatrix[y][x];
         int totalScenicScore = 1;
         // check trees above
